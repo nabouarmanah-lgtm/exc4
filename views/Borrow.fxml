@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controllers.BorrowController">
+
+    <center>
+
+        <VBox spacing="10" alignment="CENTER">
+
+            <HBox spacing="10">
+                <ComboBox fx:id="booksCombobox"/>
+                <ComboBox fx:id="studentsCombobox"/>
+            </HBox>
+
+            <HBox spacing="10">
+                <DatePicker fx:id="borrowDate"/>
+                <DatePicker fx:id="returnDate"/>
+                <CheckBox fx:id="status" text="Returned"/>
+            </HBox>
+
+            <HBox spacing="10">
+                <Button text="Borrow"        onAction="#borrowHandle"/>
+                <Button text="Return"        onAction="#returnHandle"/>
+                <Button text="Delete"        onAction="#deleteHandle"/>
+                <Button text="View"          onAction="#viewHandle"/>
+                <Button text="Search"        onAction="#searchbyIds"/>
+            </HBox>
+
+            <HBox spacing="10">
+                <Button text="Borrowed Books" onAction="#borrowedBooksHandle"/>
+            </HBox>
+
+            <TableView fx:id="table">
+                <columns>
+                    <TableColumn text="Borrow ID"   fx:id="borrowIdTC"/>
+                    <TableColumn text="Book ID"     fx:id="bookIdTC"/>
+                    <TableColumn text="Student ID"  fx:id="studentIdTC"/>
+                    <TableColumn text="Borrow Date" fx:id="borrowDateTC"/>
+                    <TableColumn text="Return Date" fx:id="returnDateTC"/>
+                    <TableColumn text="Status"      fx:id="statusTC"/>
+                </columns>
+            </TableView>
+
+        </VBox>
+
+    </center>
+
+</BorderPane>
